@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/busline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="busline" />
+
+    <Button
+        android:id="@+id/busstation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="busstation" />
+
+    <Button
+        android:id="@+id/geocoder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="geocoder" />
+
+    <Button
+        android:id="@+id/regeocoder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="regeocoder" />
+
+    <Button
+        android:id="@+id/customlocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="customlocation" />
+
+    <Button
+        android:id="@+id/district"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="district" />
+
+    <Button
+        android:id="@+id/districtwithboundary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="districtwithboundary" />
+
+    <Button
+        android:id="@+id/locationmarker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="locationmarker" />
+
+    <Button
+        android:id="@+id/circle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="circle" />
+
+    <Button
+        android:id="@+id/groundmarker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="groundmarker" />
+
+    <Button
+        android:id="@+id/markerclick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="markerclick" />
+
+    <Button
+        android:id="@+id/polygon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="polygon" />
+
+    <Button
+        android:id="@+id/polyline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="polyline" />
+
+    <Button
+        android:id="@+id/poiaroundsearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="poiaroundsearch" />
+
+    <Button
+        android:id="@+id/poikeywordsearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="poikeywordsearch" />
+
+    <Button
+        android:id="@+id/busroute"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="busroute" />
+
+    <Button
+        android:id="@+id/driverroute"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="driverroute" />
+
+    <Button
+        android:id="@+id/walkroute"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="walkroute" />
+</LinearLayout>

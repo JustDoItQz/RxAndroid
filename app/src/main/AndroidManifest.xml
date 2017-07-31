@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="rxandroid.com" >
+
+    <!--权限设置-->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- Required -->
+    <permission
+        android:name="rxandroid.com.permission.JPUSH_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <!-- Required  一些系统要求的权限，如访问网络等-->
+    <uses-permission android:name="rxandroid.com.permission.JPUSH_MESSAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
+    <!-- Optional for location -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" /> <!-- 用于开启 debug 版本的应用在6.0 系统上 层叠窗口权限 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+
+    <application
+        android:name=".application.RxApplication"
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar.AppBaseTheme">
+        <!-- 适配规格 -->
+        <meta-data
+            android:name="design_width"
+            android:value="1080"></meta-data>
+        <meta-data
+            android:name="design_height"
+            android:value="1920"></meta-data>
+
+        <activity
+            android:name=".view.common.activity.SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar.AppWelcome">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!--引导页-->
+        <activity android:name=".view.common.activity.GuideActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <!--mainActivity-->
+        <activity android:name=".view.common.activity.MainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar.AppBaseThemeMain"
+            android:windowSoftInputMode="adjustPan">
+
+        </activity>
+        <!--扫码-->
+        <activity android:name=".view.scanner.SimpleScannerActivity"></activity>
+        
+        <!--H5相关操作-->
+        <activity android:name=".view.live.activity.WebViewActivity"></activity>
+        <activity android:name=".view.x5.BrowserActivity"></activity>
+        <activity android:name=".view.x5.FilechooserActivity"></activity>
+        <activity android:name=".view.x5.FullScreenActivity"></activity>
+
+        <!--定位相关-->
+        <activity android:name=".view.map.location.activity.CustomLocationActivity"></activity>
+        <activity android:name=".view.map.location.activity.LocationMarkerActivity"></activity>
+        <activity android:name=".view.map.location.activity.LocationSourceActivity"></activity>
+        <activity android:name=".view.map.location.activity.DistrictActivity"></activity>
+        <activity android:name=".view.map.location.activity.DistrictWithBoundaryActivity"></activity>
+
+        <activity
+            android:name=".view.map.overlay.activity.MarkerActivity"
+            android:label="@string/marker_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.map.overlay.activity.PolylineActivity"
+            android:label="@string/polyline_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.map.overlay.activity.GroundOverlayActivity"
+            android:label="@string/groundoverlay_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.map.overlay.activity.PolygonActivity"
+            android:label="@string/polygon_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.map.overlay.activity.CircleActivity"
+            android:label="@string/circle_demo"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".view.map.geo.activity.GeocoderActivity"
+            android:label="@string/geocoder_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.map.route.activity.RouteActivity"
+            android:label="@string/route_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.map.baseline.activity.BuslineActivity"
+            android:label="@string/busline_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.map.poisearch.activity.PoiKeywordSearchActivity"
+            android:label="@string/poikeywordsearch_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.map.poisearch.activity.PoiAroundSearchActivity"
+            android:label="@string/poiaroundsearch_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.map.weather.activity.WeatherSearchActivity"
+            android:label="@string/weather_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.map.poisearch.activity.SubPoiSearchActivity"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            android:label="@string/subpoi_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.map.route.activity.DriveRouteDetailActivity"
+            android:label="@string/route_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.map.route.activity.WalkRouteDetailActivity"
+            android:label="@string/route_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.map.route.activity.BusRouteDetailActivity"
+            android:label="@string/route_demo"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".view.map.geo.activity.ReGeocoderActivity"
+            android:label="@string/regeocoder_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.map.overlay.activity.MarkerClickActivity"
+            android:label="@string/marker_click"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.map.route.activity.DriveRouteActivity"
+            android:label="@string/route_drive"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.map.route.activity.BusRouteActivity"
+            android:label="@string/route_bus"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.map.route.activity.WalkRouteActivity"
+            android:label="@string/route_walk"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.map.baseline.activity.BusStationActivity"
+            android:label="@string/busstation_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.map.overlay.activity.InfoWindowActivity"
+            android:label="@string/infowindow_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.map.overlay.activity.TileOverlayActivity"
+            android:label="@string/tileoverlay_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.map.poisearch.activity.PoiIDSearchActivity"
+            android:label="@string/poiidsearch_demo"
+            android:screenOrientation="portrait" />
+        <activity android:name=".view.map.routepoi.activity.RoutePOIActivity"
+            android:label="@string/routepoisearch_demo"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".view.map.route.activity.RideRouteActivity"
+            android:label="@string/route_demo"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".view.map.route.activity.RideRouteDetailActivity"
+            android:label="@string/route_ride"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".view.map.location.activity.TestMapActivity"></activity>
+
+
+        <!-- 分享 -->
+        <!-- 分享  微信回调需要把这个类移到自己包下 然后配置就可以了 -->
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name="com.mob.tools.MobUIShell"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+            <intent-filter>
+                <data android:scheme="tencent100371282" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- 支付宝分享回调 -->
+        <activity
+            android:name=".apshare.ShareEntryActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"/>
+
+        <!-- Required SDK核心功能-->
+        <activity
+            android:name="cn.jpush.android.ui.PushActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="cn.jpush.android.ui.PushActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="rxandroid.com" />
+            </intent-filter>
+        </activity>
+
+        <!-- Required SDK 核心功能-->
+        <!-- 可配置android:process参数将PushService放在其他进程中 -->
+        <service
+            android:name="cn.jpush.android.service.PushService"
+            android:process=":mult"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTER" />
+                <action android:name="cn.jpush.android.intent.REPORT" />
+                <action android:name="cn.jpush.android.intent.PushService" />
+                <action android:name="cn.jpush.android.intent.PUSH_TIME" />
+            </intent-filter>
+        </service>
+
+        <!-- since 1.8.0 option 可选项。用于同一设备中不同应用的JPush服务相互拉起的功能。 -->
+        <!-- 若不启用该功能可删除该组件，将不拉起其他应用也不能被其他应用拉起 -->
+        <service
+            android:name="cn.jpush.android.service.DaemonService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.DaemonService" />
+                <category android:name="rxandroid.com" />
+            </intent-filter>
+
+        </service>
+
+        <!-- Required SDK核心功能-->
+        <receiver
+            android:name="cn.jpush.android.service.PushReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter android:priority="1000">
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY" />   <!--Required  显示通知栏 -->
+                <category android:name="rxandroid.com" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+            <!-- Optional -->
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Required SDK核心功能-->
+        <receiver android:name="cn.jpush.android.service.AlarmReceiver" android:exported="false"/>
+
+        <!-- User defined.  For test only  用户自定义的广播接收器-->
+        <receiver
+            android:name=".utils.MyReceiver"
+            android:exported="false"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTRATION" /> <!--Required  用户注册SDK的intent-->
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" /> <!--Required  用户接收SDK消息的intent-->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" /> <!--Required  用户接收SDK通知栏信息的intent-->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" /> <!--Required  用户打开自定义通知栏的intent-->
+                <action android:name="cn.jpush.android.intent.CONNECTION" /><!-- 接收网络变化 连接/断开 since 1.6.3 -->
+                <category android:name="rxandroid.com" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Required  . Enable it you can get statistics data with channel -->
+        <!--极光推送key-->
+        <meta-data android:name="JPUSH_CHANNEL" android:value="developer-default"/>
+        <meta-data android:name="JPUSH_APPKEY" android:value="0dd29dfc60c79df077bd5957" /> <!--  </>值来自开发者平台取得的AppKey-->
+        <!--高德地图key-->
+        <meta-data android:name="com.amap.api.v2.apikey" android:value="741de3681754de942fae114499d7b824" />
+        <!-- 填写您从Mob开发者后台中得到的Appkey和AppSecret -->
+        <meta-data android:name="Mob-AppKey" android:value="1f6901eaa2b00"/>
+        <meta-data android:name="Mob-AppSecret" android:value="e942ba8aa9272bf7e323130107024da3"/>
+
+    </application>
+
+
+</manifest>
